@@ -1,7 +1,7 @@
 import add
 import read
-import numpy as np
-
+from Gauss import gauss
+import cloneNode as clone
 array=[]
 output=[]
 inp=[]
@@ -36,7 +36,8 @@ for o in range(len(output)):
 
 try:
     for i in range(len(output)):
-        inp.append(np.linalg.solve(array,output[i]))
+        inp.append(gauss.GaussJCalculate\
+            (clone.CloneAll(array),clone.CloneAll(output[i])))
         print("\nTraining",i+1," Complate!!!")
         print("Reg  Value=",inp[i][0])
         for j in range(1,len(inp[i])):
